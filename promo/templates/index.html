@@ -11,7 +11,139 @@
     <title>Hello, world!</title>
   </head>
   <body>
-    <h1>Hello, world!</h1>
+    <nav class="navbar navbar-light bg-light">
+      <a class="navbar-brand" href="#">
+        <!-- <img src="/docs/4.0/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt=""> -->
+        Bootstrap
+      </a>
+    </nav>
+
+    <div class="container">
+      <h1>Преимущества</h1>
+      <ul class="list-group">
+        <li class="list-group-item">
+          Тренеры – наши тренеры имеют высокую квалификацию и богатый опыт работы
+        </li>
+        <li class="list-group-item">
+          Цены – мы не завышаем цен, стараясь делать наши услуги доступными
+        </li>
+        <li class="list-group-item">
+          Соревнования – мы проводим соревнования на регулярной основе, присваивая спортивные разряды
+        </li>
+        <li class="list-group-item">
+          Система занятий – мы знаем, как научить плавать в кротчайшие сроки и с наибольшим удовольствием
+        </li>
+        <li class="list-group-item">
+          Фото и видео – мы фотографируем, снимаем видео и делаем все возможное, чтобы вы могли следить за успехами Ваших детей
+        </li>
+      </ul>
+    </div>
+
+    <div class="container">
+      <h1>О клубе</h1>
+      <div>
+        Спортивный клуб «Чемпион» основан в 2011 году. За время  работы мы научили плавать более 10 тысяч детей и взрослых. Нами разработана программа по обучению плаванию, которая позволяет планомерно обучать плавать. Мы уделяем внимание каждому нашему клиенту, следим за его успехами и стараемся сделать каждое занятие увлекательным.
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <h2>Записаться</h1>
+          <div>
+            Обучение проходит в группах по 8-12 человек. Группы формируются по возрасту и навыкам плавания. Мы стремимся сделать обучение не только эффективным, но и максимально комфортным.
+          </div>
+        </div>
+        <div class="col">
+          <form method="POST" action="{% url 'index' %}">
+            {% if form.non_field_errors %}
+            <div class="form-group">
+                {% for error in form.non_field_errors %}
+                <p class="help-block text-danger">{{ error }}</p>
+                {% endfor %}
+            </div>
+            {% endif %}
+            {% csrf_token %}
+            <div class="form-group">
+              <label for="children_name">Фамилия и имя ребенка</label>
+              <input class="form-control" type="text" name="children_name" required>
+              {% for error in form.children_name.errors %}
+                <span class="help-block text-danger">{{ error }}</span>
+              {% endfor %}
+            </div>
+            <div class="form-group">
+              <label for="children_birthday">Дата рождения</label>
+              <input class="form-control" type="date" name="children_birthday" required>
+              {% for error in form.children_birthday.errors %}
+                <span class="help-block text-danger">{{ error }}</span>
+              {% endfor %}
+            </div>
+            <div class="form-group">
+              <label for="phone">Контактный телефон родителя</label>
+              <input class="form-control" type="tel" name="phone" required>
+              {% for error in form.phone.errors %}
+                <span class="help-block text-danger">{{ error }}</span>
+              {% endfor %}
+            </div>
+            <div class="form-group">
+              <label for="email">Электронная почта родителя</label>
+              <input class="form-control" type="email" name="email" required>
+              {% for error in form.email.errors %}
+                <span class="help-block text-danger">{{ error }}</span>
+              {% endfor %}
+            </div>
+            <div class="form-group">
+              <label for="name">Как к Вам обращаться</label>
+              <input class="form-control" type="text" name="name" required>
+              {% for error in form.name.errors %}
+                <span class="help-block text-danger">{{ error }}</span>
+              {% endfor %}
+            </div>
+            <!-- TODO: Выберите удобное время для посещения -->
+            <!-- TODO: Выберите уровень подготовленности Вашего ребенка (не умеет плавать / умеет держаться на воде / хорошо плавает) -->
+            <div class="form-group">
+              <label for="comments">Комментарий</label>
+              <input class="form-control" type="text" name="comments">
+              {% for error in form.comments.errors %}
+                <span class="help-block text-danger">{{ error }}</span>
+              {% endfor %}
+            </div>
+            <div class="form-check">
+              <label class="form-check-label" for="agreement">
+                <input class="form-check-input" type="checkbox" name="agreement" required>
+                Согласие на обработку персональных данных
+              </label>
+              {% for error in form.agreement.errors %}
+                <span class="help-block text-danger">{{ error }}</span>
+              {% endfor %}
+            </div>
+            <button type="submit" class="btn btn-primary">Оформить заявку</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- <div class="container">
+      <h1>Проезд</h1>
+      <div>
+        <div>
+          Проезд от м. Медведково
+          Выход из 1-го вагона, далее на авт. № 606 до остановки "Поликлиника"
+        </div>
+        <div>
+          Проезд от м. Бибирево
+          Выход из последнего выгона, далее на авт. № 290 до остановки "Поликлиника"
+        </div>
+        <div>
+          Проезд от м. Алтуфьево
+          Выход из последнего вагона, далее на авт. № 815, 259 до ост. "Поликлиника"
+        </div>
+      </div>
+    </div> -->
+
+    <footer class="container">
+      <p>© Company 2017-2018</p>
+    </footer>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
