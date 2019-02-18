@@ -1,14 +1,9 @@
-from django.views.generic.edit import FormView
+from django.views.generic.edit import CreateView
 
-from promo.forms import OrderForm
+from promo.forms import RequestForm
 
 
-class IndexView(FormView):
+class IndexView(CreateView):
     template_name = 'index.html'
-    form_class = OrderForm
-    success_url = '/'
-
-    def form_valid(self, form):
-        # TODO: send email
-        print(form.cleaned_data)
-        return super().form_valid(form)
+    form_class = RequestForm
+    success_url = '/?success=1'

@@ -1,0 +1,64 @@
+<form method="POST" action="{% url 'index' %}">
+  {% if form.non_field_errors %}
+  <div class="form-group">
+      {% for error in form.non_field_errors %}
+      <p class="help-block text-danger">{{ error }}</p>
+      {% endfor %}
+  </div>
+  {% endif %}
+  {% csrf_token %}
+  <div class="form-group">
+    <label for="children_name">Фамилия и имя ребенка</label>
+    <input class="form-control" type="text" name="children_name" value="{{ form.children_name.value|default_if_none:'' }}" required>
+    {% for error in form.children_name.errors %}
+      <span class="help-block text-danger">{{ error }}</span>
+    {% endfor %}
+  </div>
+  <div class="form-group">
+    <label for="children_birthday">Дата рождения</label>
+    <input class="form-control" type="date" name="children_birthday" value="{{ form.children_birthday.value|default_if_none:'' }}" required>
+    {% for error in form.children_birthday.errors %}
+      <span class="help-block text-danger">{{ error }}</span>
+    {% endfor %}
+  </div>
+  <div class="form-group">
+    <label for="phone">Контактный телефон родителя</label>
+    <input class="form-control" type="tel" name="phone" value="{{ form.phone.value|default_if_none:'' }}" required>
+    {% for error in form.phone.errors %}
+      <span class="help-block text-danger">{{ error }}</span>
+    {% endfor %}
+  </div>
+  <div class="form-group">
+    <label for="email">Электронная почта родителя</label>
+    <input class="form-control" type="email" name="email" value="{{ form.email.value|default_if_none:'' }}" required>
+    {% for error in form.email.errors %}
+      <span class="help-block text-danger">{{ error }}</span>
+    {% endfor %}
+  </div>
+  <div class="form-group">
+    <label for="name">Как к Вам обращаться</label>
+    <input class="form-control" type="text" name="name" value="{{ form.name.value|default_if_none:'' }}" required>
+    {% for error in form.name.errors %}
+      <span class="help-block text-danger">{{ error }}</span>
+    {% endfor %}
+  </div>
+  <!-- TODO: Выберите удобное время для посещения -->
+  <!-- TODO: Выберите уровень подготовленности Вашего ребенка (не умеет плавать / умеет держаться на воде / хорошо плавает) -->
+  <div class="form-group">
+    <label for="comments">Комментарий</label>
+    <input class="form-control" type="text" name="comments" value="{{ form.comments.value|default_if_none:'' }}" >
+    {% for error in form.comments.errors %}
+      <span class="help-block text-danger">{{ error }}</span>
+    {% endfor %}
+  </div>
+  <div class="form-check">
+    <label class="form-check-label" for="agreement">
+      <input class="form-check-input" type="checkbox" name="agreement" {% if form.agreement.value %}checked{% endif %} required>
+      Согласие на обработку персональных данных
+    </label>
+    {% for error in form.agreement.errors %}
+      <span class="help-block text-danger">{{ error }}</span>
+    {% endfor %}
+  </div>
+  <button type="submit" class="btn btn-primary">Оформить заявку</button>
+</form>
