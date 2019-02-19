@@ -1,3 +1,7 @@
+.nav-info > .nav-item {
+    margin-left: 1rem;
+}
+
 .advantage-logo {
     display: block;
     margin-left: auto;

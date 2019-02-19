@@ -1,101 +1,150 @@
 {% load static %}
 <!doctype html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- TODO: favicon -->
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <!-- TODO: favicon -->
 
-    <!-- Site CSS -->
-    <link rel="stylesheet" href="{% static '/main.css' %}">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
-    <title>СК «Чемпион»</title>
-  </head>
-  <body>
-    <nav class="navbar navbar-light bg-light">
-      <a class="navbar-brand" href="#">
-        <img src="{% static '/images/brand.png' %}" width="30" height="30" class="d-inline-block align-top" alt="">
-        СК «Чемпион»
-      </a>
-    </nav>
+  <!-- Icon library -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <div class="container">
-      <div class="row">
-        <div class="col">
-          <img class="advantage-logo" src="{% static '/images/advantages/trainers.png' %}">
-          <div class="advantage-title">Тренеры</div>
-          <div class="advantage-description">
-            Наши тренеры имеют высокую квалификацию и богатый опыт работы
-          </div>
+  <!-- Site CSS -->
+  <link rel="stylesheet" href="{% static '/main.css' %}">
+
+  <title>СК «Чемпион»</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">
+      <img class="d-inline-block align-top logo-img" src="{% static '/images/brand.png' %}" alt="">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+    aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#advantages">Наши преимущества</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#club">О клубе</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#request">Записаться</a>
+        </li>
+      </ul>
+    </div>
+    <ul class="nav nav-info">
+      <li class="nav-item">
+        <a href="mailto:info@swimchampion.ru">
+          <span class="fa fa-envelope"></span>info@swimchampion.ru
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="tel:+7(499)938-59-68">+7(499)938-59-68</span>
+      </li>
+      <li class="nav-item">
+        <a class="fa fa-facebook" href="https://www.facebook.com/swimchampion2011"></a>
+      </li>
+      <li class="nav-item">
+        <a class="fa fa-instagram" href="https://www.instagram.com/sportclubchampion/"></a>
+      </li>
+      <li class="nav-item">
+        <a class="fa fa-vk" href="https://vk.com/swimchampion"></a>
+      </li>
+    </ul>
+  </nav>
+
+  <nav class="navbar navbar-expand-lg navbar-light justify-content-center">
+
+  </nav>
+
+  <div class="container" id="advantages">
+    <div class="row">
+      <div class="col">
+        <img class="advantage-logo" src="{% static '/images/advantages/trainers.png' %}">
+        <div class="advantage-title">Тренеры</div>
+        <div class="advantage-description">
+          Наши тренеры имеют высокую квалификацию и богатый опыт работы
         </div>
-        <div class="col">
-          <img class="advantage-logo" src="{% static '/images/advantages/cost.png' %}">
-          <div class="advantage-title">Цены</div>
-          <div class="advantage-description">
-            Мы не завышаем цен, стараясь делать наши услуги доступными
-          </div>
+      </div>
+      <div class="col">
+        <img class="advantage-logo" src="{% static '/images/advantages/cost.png' %}">
+        <div class="advantage-title">Цены</div>
+        <div class="advantage-description">
+          Мы не завышаем цен, стараясь делать наши услуги доступными
         </div>
-        <div class="col">
-          <img class="advantage-logo" src="{% static '/images/advantages/competitions.png' %}">
-          <div class="advantage-title">Соревнования</div>
-          <div class="advantage-description">
-            Мы проводим соревнования на регулярной основе, присваивая спортивные разряды
-          </div>
+      </div>
+      <div class="col">
+        <img class="advantage-logo" src="{% static '/images/advantages/competitions.png' %}">
+        <div class="advantage-title">Соревнования</div>
+        <div class="advantage-description">
+          Мы проводим соревнования на регулярной основе, присваивая спортивные разряды
         </div>
-        <div class="col">
-          <img class="advantage-logo" src="{% static '/images/advantages/knowledge.png' %}">
-          <div class="advantage-title">Система занятий</div>
-          <div class="advantage-description">
-            Мы знаем, как научить плавать в кротчайшие сроки и с наибольшим удовольствием
-          </div>
+      </div>
+      <div class="col">
+        <img class="advantage-logo" src="{% static '/images/advantages/knowledge.png' %}">
+        <div class="advantage-title">Система занятий</div>
+        <div class="advantage-description">
+          Мы знаем, как научить плавать в кротчайшие сроки и с наибольшим удовольствием
         </div>
-        <div class="col">
-          <img class="advantage-logo" src="{% static '/images/advantages/photovideo.png' %}">
-          <div class="advantage-title">Фото и видео</div>
-          <div class="advantage-description">
-            Мы фотографируем, снимаем видео и делаем все возможное, чтобы вы могли следить за успехами Ваших детей
-          </div>
+      </div>
+      <div class="col">
+        <img class="advantage-logo" src="{% static '/images/advantages/photovideo.png' %}">
+        <div class="advantage-title">Фото и видео</div>
+        <div class="advantage-description">
+          Мы фотографируем, снимаем видео и делаем все возможное, чтобы вы могли следить за успехами Ваших детей
         </div>
       </div>
     </div>
+  </div>
 
-    <div class="container">
-      <h1>О клубе</h1>
-      <div class="row">
-        <div class="col">
-          Спортивный клуб «Чемпион» основан в 2011 году. За время  работы мы научили плавать более 10 тысяч детей и взрослых. Нами разработана программа по обучению плаванию, которая позволяет планомерно обучать плавать. Мы уделяем внимание каждому нашему клиенту, следим за его успехами и стараемся сделать каждое занятие увлекательным.
-        </div>
-        <div class="col">
-          TODO: Photo
-        </div>
+  <div class="container" id="club">
+    <h1>О клубе</h1>
+    <div class="row">
+      <div class="col">
+        Спортивный клуб «Чемпион» основан в 2011 году. За время работы мы научили плавать более 10 тысяч детей и
+        взрослых. Нами разработана программа по обучению плаванию, которая позволяет планомерно обучать плавать. Мы
+        уделяем внимание каждому нашему клиенту, следим за его успехами и стараемся сделать каждое занятие
+        увлекательным.
+      </div>
+      <div class="col">
+        TODO: Photo
       </div>
     </div>
+  </div>
 
-    <div class="container">
-      <div class="row">
-        <div class="col">
-          <h2>Записаться</h1>
+  <div class="container" id="request">
+    <div class="row">
+      <div class="col">
+        <h1>Записаться</h1>
           <div>
-            Обучение проходит в группах по 8-12 человек. Группы формируются по возрасту и навыкам плавания. Мы стремимся сделать обучение не только эффективным, но и максимально комфортным.
+            Обучение проходит в группах по 8-12 человек. Группы формируются по возрасту и навыкам плавания. Мы стремимся
+            сделать обучение не только эффективным, но и максимально комфортным.
           </div>
-        </div>
-        <div class="col">
-          {% if request.GET.success %}
-          Ваша заявка принята. В ближайшее время с вами свяжутся наши специалисты.
-          Для отправки повторной заявки нажмите <a href="{% url 'index' %}">здесь</a>.
-          {% else %}
-          {% include 'request_info.html' %}
-          {% endif %}
-        </div>
+      </div>
+      <div class="col">
+        {% if request.GET.success %}
+        Ваша заявка принята. В ближайшее время с вами свяжутся наши специалисты.
+        Для отправки повторной заявки нажмите <a href="{% url 'index' %}">здесь</a>.
+        {% else %}
+        {% include 'request_info.html' %}
+        {% endif %}
       </div>
     </div>
+  </div>
 
-    <!-- <div class="container">
+  <!-- <div class="container">
       <h1>Проезд</h1>
       <div>
         <div>
@@ -113,14 +162,21 @@
       </div>
     </div> -->
 
-    <footer class="container">
-      <p>© Company 2017-2018</p>
-    </footer>
+  <footer class="container">
+    <p>© Company 2017-2018</p>
+  </footer>
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-  </body>
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+    integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
+</body>
+
 </html>
