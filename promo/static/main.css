@@ -1,3 +1,20 @@
+h1 {
+    color: #052e5e;
+}
+
+.container {
+    margin-bottom: 3rem;
+}
+
+.block-wrapper {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.block-description {
+    text-align: justify;
+}
+
 .nav-info > .nav-item {
     margin-left: 1rem;
 }

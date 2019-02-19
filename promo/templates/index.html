@@ -65,81 +65,99 @@
     </ul>
   </nav>
 
-  <nav class="navbar navbar-expand-lg navbar-light justify-content-center">
-
-  </nav>
-
-  <div class="container" id="advantages">
-    <div class="row">
-      <div class="col">
-        <img class="advantage-logo" src="{% static '/images/advantages/trainers.png' %}">
-        <div class="advantage-title">Тренеры</div>
-        <div class="advantage-description">
-          Наши тренеры имеют высокую квалификацию и богатый опыт работы
+  <div class="block-wrapper">
+    <div class="container" id="advantages">
+      <div class="row">
+        <div class="col">
+          <img class="advantage-logo" src="{% static '/images/advantages/trainers.png' %}">
+          <div class="advantage-title">Тренеры</div>
+          <div class="advantage-description">
+            Наши тренеры имеют высокую квалификацию и богатый опыт работы
+          </div>
         </div>
-      </div>
-      <div class="col">
-        <img class="advantage-logo" src="{% static '/images/advantages/cost.png' %}">
-        <div class="advantage-title">Цены</div>
-        <div class="advantage-description">
-          Мы не завышаем цен, стараясь делать наши услуги доступными
+        <div class="col">
+          <img class="advantage-logo" src="{% static '/images/advantages/cost.png' %}">
+          <div class="advantage-title">Цены</div>
+          <div class="advantage-description">
+            Мы не завышаем цен, стараясь делать наши услуги доступными
+          </div>
         </div>
-      </div>
-      <div class="col">
-        <img class="advantage-logo" src="{% static '/images/advantages/competitions.png' %}">
-        <div class="advantage-title">Соревнования</div>
-        <div class="advantage-description">
-          Мы проводим соревнования на регулярной основе, присваивая спортивные разряды
+        <div class="col">
+          <img class="advantage-logo" src="{% static '/images/advantages/competitions.png' %}">
+          <div class="advantage-title">Соревнования</div>
+          <div class="advantage-description">
+            Мы проводим соревнования на регулярной основе, присваивая спортивные разряды
+          </div>
         </div>
-      </div>
-      <div class="col">
-        <img class="advantage-logo" src="{% static '/images/advantages/knowledge.png' %}">
-        <div class="advantage-title">Система занятий</div>
-        <div class="advantage-description">
-          Мы знаем, как научить плавать в кротчайшие сроки и с наибольшим удовольствием
+        <div class="col">
+          <img class="advantage-logo" src="{% static '/images/advantages/knowledge.png' %}">
+          <div class="advantage-title">Система занятий</div>
+          <div class="advantage-description">
+            Мы знаем, как научить плавать в кротчайшие сроки и с наибольшим удовольствием
+          </div>
         </div>
-      </div>
-      <div class="col">
-        <img class="advantage-logo" src="{% static '/images/advantages/photovideo.png' %}">
-        <div class="advantage-title">Фото и видео</div>
-        <div class="advantage-description">
-          Мы фотографируем, снимаем видео и делаем все возможное, чтобы вы могли следить за успехами Ваших детей
+        <div class="col">
+          <img class="advantage-logo" src="{% static '/images/advantages/photovideo.png' %}">
+          <div class="advantage-title">Фото и видео</div>
+          <div class="advantage-description">
+            Мы фотографируем, снимаем видео и делаем все возможное, чтобы вы могли следить за успехами Ваших детей
+          </div>
         </div>
       </div>
     </div>
   </div>
 
-  <div class="container" id="club">
-    <h1>О клубе</h1>
-    <div class="row">
-      <div class="col">
-        Спортивный клуб «Чемпион» основан в 2011 году. За время работы мы научили плавать более 10 тысяч детей и
-        взрослых. Нами разработана программа по обучению плаванию, которая позволяет планомерно обучать плавать. Мы
-        уделяем внимание каждому нашему клиенту, следим за его успехами и стараемся сделать каждое занятие
-        увлекательным.
-      </div>
-      <div class="col">
-        TODO: Photo
+  <div class="bg-light block-wrapper">
+    <div class="container" id="club">
+      <div class="row">
+        <div class="col">
+          <h1>О клубе</h1>
+          <div class="block-description">
+            Спортивный клуб «Чемпион» основан в 2011 году. За время работы мы научили плавать более 10 тысяч детей и
+            взрослых. Нами разработана программа по обучению плаванию, которая позволяет планомерно обучать плавать. Мы
+            уделяем внимание каждому нашему клиенту, следим за его успехами и стараемся сделать каждое занятие
+            увлекательным.
+          </div>
+        </div>
+        <div class="col">
+          <div id="carouselExampleInterval" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="{% static '/images/photos/photo1.jpg'%}" class="d-block w-100">
+              </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleInterval" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleInterval" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 
-  <div class="container" id="request">
-    <div class="row">
-      <div class="col">
-        <h1>Записаться</h1>
-          <div>
+  <div class="block-wrapper">
+    <div class="container" id="request">
+      <div class="row">
+        <div class="col">
+          <h1>Записаться</h1>
+          <div class="block-description">
             Обучение проходит в группах по 8-12 человек. Группы формируются по возрасту и навыкам плавания. Мы стремимся
             сделать обучение не только эффективным, но и максимально комфортным.
           </div>
-      </div>
-      <div class="col">
-        {% if request.GET.success %}
-        Ваша заявка принята. В ближайшее время с вами свяжутся наши специалисты.
-        Для отправки повторной заявки нажмите <a href="{% url 'index' %}">здесь</a>.
-        {% else %}
-        {% include 'request_info.html' %}
-        {% endif %}
+        </div>
+        <div class="col">
+          {% if request.GET.success %}
+          Ваша заявка принята. В ближайшее время с вами свяжутся наши специалисты.
+          Для отправки повторной заявки нажмите <a href="{% url 'index' %}">здесь</a>.
+          {% else %}
+          {% include 'request_info.html' %}
+          {% endif %}
+        </div>
       </div>
     </div>
   </div>
