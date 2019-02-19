@@ -15,6 +15,10 @@ h1 {
     text-align: justify;
 }
 
+.fa-envelope {
+    margin-right: 0.1rem;
+}
+
 .nav-info > .nav-item {
     margin-left: 1rem;
 }
@@ -34,4 +38,8 @@ h1 {
 
 .advantage-description {
     text-align: center;
+}
+
+footer.container {
+    margin-bottom: 1rem;
 }
