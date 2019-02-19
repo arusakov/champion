@@ -1,3 +1,4 @@
+{% load static %}
 <!doctype html>
 <html lang="en">
   <head>
@@ -15,28 +16,47 @@
   <body>
     <nav class="navbar navbar-light bg-light">
       <a class="navbar-brand" href="#">
-        <img src="/static/brand.png" width="30" height="30" class="d-inline-block align-top" alt="">
+        <img src="{% static '/images/brand.png' %}" width="30" height="30" class="d-inline-block align-top" alt="">
         СК «Чемпион»
       </a>
     </nav>
 
     <div class="container">
-      <h1>Преимущества</h1>
       <div class="row">
         <div class="col">
-          Тренеры – наши тренеры имеют высокую квалификацию и богатый опыт работы
+          <img class="advantage-logo" src="{% static '/images/advantages/trainers.png' %}">
+          <div class="advantage-title">Тренеры</div>
+          <div class="advantage-description">
+            Наши тренеры имеют высокую квалификацию и богатый опыт работы
+          </div>
         </div>
         <div class="col">
-          Цены – мы не завышаем цен, стараясь делать наши услуги доступными
+          <img class="advantage-logo" src="{% static '/images/advantages/cost.png' %}">
+          <div class="advantage-title">Цены</div>
+          <div class="advantage-description">
+            Мы не завышаем цен, стараясь делать наши услуги доступными
+          </div>
         </div>
         <div class="col">
-          Соревнования – мы проводим соревнования на регулярной основе, присваивая спортивные разряды
+          <img class="advantage-logo" src="{% static '/images/advantages/competitions.png' %}">
+          <div class="advantage-title">Соревнования</div>
+          <div class="advantage-description">
+            Мы проводим соревнования на регулярной основе, присваивая спортивные разряды
+          </div>
         </div>
         <div class="col">
-          Система занятий – мы знаем, как научить плавать в кротчайшие сроки и с наибольшим удовольствием
+          <img class="advantage-logo" src="{% static '/images/advantages/knowledge.png' %}">
+          <div class="advantage-title">Система занятий</div>
+          <div class="advantage-description">
+            Мы знаем, как научить плавать в кротчайшие сроки и с наибольшим удовольствием
+          </div>
         </div>
         <div class="col">
-          Фото и видео – мы фотографируем, снимаем видео и делаем все возможное, чтобы вы могли следить за успехами Ваших детей
+          <img class="advantage-logo" src="{% static '/images/advantages/photovideo.png' %}">
+          <div class="advantage-title">Фото и видео</div>
+          <div class="advantage-description">
+            Мы фотографируем, снимаем видео и делаем все возможное, чтобы вы могли следить за успехами Ваших детей
+          </div>
         </div>
       </div>
     </div>
