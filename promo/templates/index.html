@@ -156,7 +156,7 @@
         <div class="col">
           {% if request.GET.success %}
           Ваша заявка принята. В ближайшее время с вами свяжутся наши специалисты.
-          Для отправки повторной заявки нажмите <a href="{% url 'index' %}">здесь</a>.
+          Для отправки повторной заявки нажмите <a href="{% url 'index' %}#request">здесь</a>.
           {% else %}
           {% include 'request_info.html' %}
           {% endif %}
