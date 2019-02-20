@@ -28,19 +28,22 @@
       <img class="d-inline-block align-top logo-img" src="{% static '/images/brand.png' %}" alt="">
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
-    aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
+      aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarText">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-          <a class="nav-link" href="#advantages">Наши преимущества</a>
+          <a class="nav-link" href="#advantages">Преимущества</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#club">О клубе</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#request">Записаться</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#location">Как добраться</a>
         </li>
       </ul>
     </div>
@@ -162,44 +165,63 @@
     </div>
   </div>
 
-  <!-- <div class="container">
-      <h1>Проезд</h1>
-      <div>
-        <div>
-          Проезд от м. Медведково
-          Выход из 1-го вагона, далее на авт. № 606 до остановки "Поликлиника"
+  <div class="bg-light block-wrapper">
+    <div class="container" id="location">
+      <div class="row">
+        <div class="col">
+          <h1>Как добраться</h1>
+          <div>
+            <div>
+              <span class="location-address-title">Наш адрес:</span>
+              <span class="location-address">г.Москва, ул. Корнейчука, д.28, к.2</span>
+            </div>
+            <div class="location-route">
+              <div class="location-route-start">от м. Медведково</div>
+              <div class="location-route-description">
+                  Выход из 1-го вагона, далее на авт. № 606 до остановки "Поликлиника"
+              </div>
+            </div>
+            <div class="location-route">
+              <div class="location-route-start">от м. Бибирево</div>
+              <div class="location-route-description">
+                Выход из последнего выгона, далее на авт. № 290 до остановки "Поликлиника"
+              </div>
+            </div>
+            <div class="location-route">
+              <div class="location-route-start">от м. Алтуфьево</div>
+              <div class="location-route-description">
+                Выход из последнего вагона, далее на авт. № 815, 259 до ост. "Поликлиника"
+              </div>
+            </div>
+          </div>
         </div>
-        <div>
-          Проезд от м. Бибирево
-          Выход из последнего выгона, далее на авт. № 290 до остановки "Поликлиника"
-        </div>
-        <div>
-          Проезд от м. Алтуфьево
-          Выход из последнего вагона, далее на авт. № 815, 259 до ост. "Поликлиника"
+        <div class="col">
+          <div id="location-map" style="width: 600px; height: 400px"></div>
         </div>
       </div>
-    </div> -->
+    </div>
+  </div>
 
   <footer class="container">
-      <ul class="nav justify-content-center nav-info">
-        <li class="nav-item">
-          <a href="mailto:info@swimchampion.ru">
-            <span class="fa fa-envelope"></span>info@swimchampion.ru
-          </a>
-        </li>
-        <li class="nav-item">
-          <a href="tel:+7(499)938-59-68">+7(499)938-59-68</span>
-        </li>
-        <li class="nav-item">
-          <a class="fa fa-facebook" href="https://www.facebook.com/swimchampion2011"></a>
-        </li>
-        <li class="nav-item">
-          <a class="fa fa-instagram" href="https://www.instagram.com/sportclubchampion/"></a>
-        </li>
-        <li class="nav-item">
-          <a class="fa fa-vk" href="https://vk.com/swimchampion"></a>
-        </li>
-      </ul>
+    <ul class="nav justify-content-center nav-info">
+      <li class="nav-item">
+        <a href="mailto:info@swimchampion.ru">
+          <span class="fa fa-envelope"></span>info@swimchampion.ru
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="tel:+7(499)938-59-68">+7(499)938-59-68</span>
+      </li>
+      <li class="nav-item">
+        <a class="fa fa-facebook" href="https://www.facebook.com/swimchampion2011"></a>
+      </li>
+      <li class="nav-item">
+        <a class="fa fa-instagram" href="https://www.instagram.com/sportclubchampion/"></a>
+      </li>
+      <li class="nav-item">
+        <a class="fa fa-vk" href="https://vk.com/swimchampion"></a>
+      </li>
+    </ul>
   </footer>
 
   <!-- Optional JavaScript -->
@@ -213,6 +235,24 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
     integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
     crossorigin="anonymous"></script>
+
+  <!-- Yandex maps -->
+  <script src="https://api-maps.yandex.ru/2.1/?apikey=0642ae84-6c3a-4710-b3a2-c746da9c7758&lang=ru_RU"
+    type="text/javascript"></script>
+  <script type="text/javascript">
+    ymaps.ready(init);
+
+    function init(){
+      var map = new ymaps.Map("location-map", {
+        center: [55.898720, 37.618031],
+        zoom: 16
+      });
+      var placemark = new ymaps.Placemark([55.898720, 37.618031], {
+        balloonContent: 'СК «Чемпион»'
+      });
+      map.geoObjects.add(placemark);
+    }
+  </script>
 </body>
 
 </html>

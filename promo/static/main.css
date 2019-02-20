@@ -1,4 +1,4 @@
-h1 {
+h1, h2 {
     color: #052e5e;
 }
 
@@ -40,6 +40,17 @@ h1 {
     text-align: center;
 }
 
+.location-address-title {
+    font-weight: 500;
+    color: #052e5e;
+}
+
+.location-route-start {
+    font-weight: 500;
+    color: #052e5e;
+}
+
 footer.container {
+    margin-top: 1rem;
     margin-bottom: 1rem;
 }
