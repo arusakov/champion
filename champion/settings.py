@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'k^i36q-@890o)7amje-exe6xzs*mt6*4-a_m#8%5-lidvof)7c'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['swimchampion.ru', 'www.swimchampion.ru']
 
 
 # Application definition
