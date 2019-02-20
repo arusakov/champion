@@ -29,3 +29,12 @@ sudo supervisorctl reload
 sudo supervisorctl restart champion
 
 sudo /etc/init.d/nginx restart
+
+
+---
+
+
+git fetch
+
+git reset --hard origin/master
+
