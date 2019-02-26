@@ -1,3 +1,4 @@
+{% load static %}
 <form method="POST" action="{% url 'index' %}">
   {% if form.non_field_errors %}
   <div class="form-group">
@@ -54,7 +55,7 @@
   <div class="form-check">
     <label class="form-check-label" for="agreement">
       <input class="form-check-input" type="checkbox" name="agreement" {% if form.agreement.value %}checked{% endif %} required>
-      Согласие на обработку персональных данных
+      Я даю <a href="{% static '/docs/agreement.pdf' %}">согласие на обработку персональных данных</a>
     </label>
     {% for error in form.agreement.errors %}
       <span class="help-block text-danger">{{ error }}</span>
