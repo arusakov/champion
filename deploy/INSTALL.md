@@ -33,8 +33,20 @@ sudo /etc/init.d/nginx restart
 
 ---
 
+cd /usr/local/champion
 
 git fetch
 
 git reset --hard origin/master
 
+source env/bin/activate
+
+env/bin/python3 manage.py migrate
+
+env/bin/python3 manage.py collectstatic --noinput
+
+sudo supervisorctl reload
+
+sudo supervisorctl restart champion
+
+sudo /etc/init.d/nginx restart
