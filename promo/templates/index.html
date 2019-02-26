@@ -73,35 +73,35 @@
       <div class="row">
         <div class="col">
           <img class="advantage-logo" src="{% static '/images/advantages/trainers.png' %}">
-          <div class="advantage-title">Тренеры</div>
+          <h2 class="advantage-title">Тренеры</h2>
           <div class="advantage-description">
             Наши тренеры имеют высокую квалификацию и богатый опыт работы
           </div>
         </div>
         <div class="col">
           <img class="advantage-logo" src="{% static '/images/advantages/cost.png' %}">
-          <div class="advantage-title">Цены</div>
+          <h2 class="advantage-title">Цены</h2>
           <div class="advantage-description">
             Мы не завышаем цен, стараясь делать наши услуги доступными
           </div>
         </div>
         <div class="col">
           <img class="advantage-logo" src="{% static '/images/advantages/competitions.png' %}">
-          <div class="advantage-title">Соревнования</div>
+          <h2 class="advantage-title">Соревнования</h2>
           <div class="advantage-description">
             Мы проводим соревнования на регулярной основе, присваивая спортивные разряды
           </div>
         </div>
         <div class="col">
           <img class="advantage-logo" src="{% static '/images/advantages/knowledge.png' %}">
-          <div class="advantage-title">Система занятий</div>
+          <h2 class="advantage-title">Система занятий</h2>
           <div class="advantage-description">
             Мы знаем, как научить плавать в кротчайшие сроки и с наибольшим удовольствием
           </div>
         </div>
         <div class="col">
           <img class="advantage-logo" src="{% static '/images/advantages/photovideo.png' %}">
-          <div class="advantage-title">Фото и видео</div>
+          <h2 class="advantage-title">Фото и видео</h2>
           <div class="advantage-description">
             Мы фотографируем, снимаем видео и делаем все возможное, чтобы вы могли следить за успехами Ваших детей
           </div>
@@ -149,8 +149,23 @@
         <div class="col">
           <h1>Записаться</h1>
           <div class="block-description">
-            Обучение проходит в группах по 8-12 человек. Группы формируются по возрасту и навыкам плавания. Мы стремимся
-            сделать обучение не только эффективным, но и максимально комфортным.
+            Обучение проходит в группах по 8-12 человек.
+            Группы формируются по возрасту и навыкам плавания.
+            Мы стремимся сделать обучение не только эффективным, но и максимально комфортным.
+          </div>
+          <div class="block-documents">
+            <h2 class="block-documents-title">Документы</h2>
+            <ul>
+              <li>
+                <a href="{% static '/docs/contract.pdf' %}">Договор аферта на оказание услуг</a>
+              </li>
+              <li>
+                <a href="{% static '/docs/receipt.pdf' %}">Квитанция на оплату</a>
+              </li>
+              <li>
+                <a href="{% static '/docs/agreement.pdf' %}">Согласие на обработку персональных данных</a>
+              </li>
+            </ul>
           </div>
         </div>
         <div class="col">
@@ -178,7 +193,7 @@
             <div class="location-route">
               <div class="location-route-start">от м. Медведково</div>
               <div class="location-route-description">
-                  Выход из 1-го вагона, далее на авт. № 606 до остановки "Поликлиника"
+                Выход из 1-го вагона, далее на авт. № 606 до остановки "Поликлиника"
               </div>
             </div>
             <div class="location-route">
@@ -242,7 +257,7 @@
   <script type="text/javascript">
     ymaps.ready(init);
 
-    function init(){
+    function init() {
       var map = new ymaps.Map("location-map", {
         center: [55.898720, 37.618031],
         zoom: 16
