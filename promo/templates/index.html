@@ -16,6 +16,12 @@
   <!-- Icon library -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+  <!-- Slick CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css"
+    integrity="sha256-UK1EiopXIL+KVhfbFa8xrmAWPeBjMVdvYMYkTAEv/HI=" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css"
+    integrity="sha256-4hqlsNP9KM6+2eA8VUT0kk4RsMRTeS7QGHIM+MZ5sLY=" crossorigin="anonymous" />
+
   <!-- Site CSS -->
   <link rel="stylesheet" href="{% static '/main.css' %}">
 
@@ -116,39 +122,33 @@
         <div class="col-md-6">
           <h1>О клубе</h1>
           <div class="block-description">
-            Плавание – красивый вид спорта, который очень благотворно воздействует на весь организм: работают все группы мышц, улучшает кровообмен, стимулирует сердечную деятельность, укрепляет дыхательную систему, формирует осанку, повышает иммунитет.
-            Умение плавать заложено во всех людях на генетическом уровне, поэтому развить этот навык в себе может каждый.
-            Миссия клуба состоит в том, чтобы помочь всем желающим обрести чувство свободы и уверенности в себе при нахождении в воде.
+            Плавание – красивый вид спорта, который очень благотворно воздействует на весь организм: работают все группы
+            мышц, улучшает кровообмен, стимулирует сердечную деятельность, укрепляет дыхательную систему, формирует
+            осанку, повышает иммунитет.
+            Умение плавать заложено во всех людях на генетическом уровне, поэтому развить этот навык в себе может
+            каждый.
+            Миссия клуба состоит в том, чтобы помочь всем желающим обрести чувство свободы и уверенности в себе при
+            нахождении в воде.
             <div class="block-description-slogan">"Время течет – учитесь плавать!"</div>
           </div>
         </div>
         <div class="col-md-6">
-          <div id="carouselExampleInterval" class="carousel slide" data-ride="carousel">
-            <div class="carousel-inner">
-              <div class="carousel-item">
-                <img src="{% static '/images/photos/photo1.jpg'%}" class="d-block w-100">
-              </div>
-              <div class="carousel-item active">
-                <img src="{% static '/images/photos/photo2.jpg'%}" class="d-block w-100">
-              </div>
-              <div class="carousel-item">
-                <img src="{% static '/images/photos/photo3.jpg'%}" class="d-block w-100">
-              </div>
-              <div class="carousel-item">
-                <img src="{% static '/images/photos/photo4.jpg'%}" class="d-block w-100">
-              </div>
-              <div class="carousel-item">
-                <img src="{% static '/images/photos/photo5.jpg'%}" class="d-block w-100">
-              </div>  
+          <div class="club-carousel">
+            <div class="club-carousel-item">
+              <img src="{% static '/images/photos/photo1.jpg'%}" class="d-block w-100">
             </div>
-            <a class="carousel-control-prev" href="#carouselExampleInterval" role="button" data-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleInterval" role="button" data-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="sr-only">Next</span>
-            </a>
+            <div class="club-carousel-item">
+              <img src="{% static '/images/photos/photo2.jpg'%}" class="d-block w-100">
+            </div>
+            <div class="club-carousel-item">
+              <img src="{% static '/images/photos/photo3.jpg'%}" class="d-block w-100">
+            </div>
+            <div class="club-carousel-item">
+              <img src="{% static '/images/photos/photo4.jpg'%}" class="d-block w-100">
+            </div>
+            <div class="club-carousel-item">
+              <img src="{% static '/images/photos/photo5.jpg'%}" class="d-block w-100">
+            </div>
           </div>
         </div>
       </div>
@@ -158,7 +158,7 @@
   <div class="block-wrapper">
     <div class="container" id="request">
       <div class="row">
-        <div class="col">
+        <div class="col-md-6">
           <h1>Записаться</h1>
           <div class="block-description">
             Обучение проходит в группах по 8-12 человек.
@@ -193,7 +193,7 @@
             </ul>
           </div>
         </div>
-        <div class="col">
+        <div class="col-md-6">
           {% if request.GET.success %}
           Ваша заявка принята. В ближайшее время с вами свяжутся наши специалисты.
           Для отправки повторной заявки нажмите <a href="{% url 'index' %}#request">здесь</a>.
@@ -242,7 +242,65 @@
     </div>
   </div>
 
-  <footer class="container">
+  <div class="block-wrapper">
+    <div class="container" id="trainers">
+      <h1>Инструкторы</h1>
+      <div class="trainer-carousel">
+        <div class="trainer-carousel-item">
+          <img class="trainer-photo" src="{% static 'images/trainers/borisov.jpg' %}">
+          <p class="trainer-name">Борисов<br>Александр Викторович</p>
+          <p class="trainer-education">
+            Высшее образование.
+            Педагог физической культуры.
+            Кандидат в мастера спорта.
+          </p>
+          <p class="trainer-experience">Стаж работы с 1993 года</p>
+        </div>
+        <div class="trainer-carousel-item">
+          <img class="trainer-photo" src="{% static 'images/trainers/dalinchuk.jpg' %}">
+          <p class="trainer-name">Далинчун<br>Ирина Валентиновна</p>
+          <p class="trainer-education">
+            Высшее образование.
+            Преподаватель физической культуры, тренер по плаванию.
+            Кандидат в мастера спорта.
+          </p>
+          <p class="trainer-experience">Стаж работы с 1993 года</p>
+        </div>
+        <div class="trainer-carousel-item">
+          <img class="trainer-photo" src="{% static 'images/trainers/runekova.jpg' %}">
+          <p class="trainer-name">Руненкова<br>Ирина Васильевна</p>
+          <p class="trainer-education">
+            Высшее образование.
+            Специалист в области физической культуры.
+            Кандидат в мастера спорта.
+          </p>
+          <p class="trainer-experience">Стаж работы с 1996 года</p>
+        </div>
+        <div class="trainer-carousel-item">
+          <img class="trainer-photo" src="{% static 'images/trainers/melnikova.jpg' %}">
+          <p class="trainer-name">Мельникова<br>Наталья Михайловна</p>
+          <p class="trainer-education">
+            Высшее образование.
+            Специалист по физической культуре, спорту и туризму.
+            Кандидат в мастера спорта.
+          </p>
+          <p class="trainer-experience">Стаж работы с 2003 года</p>
+        </div>
+        <div class="trainer-carousel-item">
+          <img class="trainer-photo" src="{% static 'images/trainers/artuhova.jpg' %}">
+          <p class="trainer-name">Артюхова<br>Екатерина Юрьевна</p>
+          <p class="trainer-education">
+            Высшее образование.
+            Специалист в области физической культуры.
+            Кандидат в мастера спорта.
+          </p>
+          <p class="trainer-experience">Стаж работы с 2013 года</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="bg-light container">
     <ul class="nav justify-content-center nav-info">
       <li class="nav-item">
         <a href="mailto:info@swimchampion.ru">
@@ -265,7 +323,7 @@
   </footer>
 
   <!-- Optional JavaScript -->
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS, then Slick.js -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
     crossorigin="anonymous"></script>
@@ -275,6 +333,8 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
     integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
     crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"
+    integrity="sha256-NXRS8qVcmZ3dOv3LziwznUHPegFhPZ1F/4inU7uC8h0=" crossorigin="anonymous"></script>
 
   <!-- Yandex maps -->
   <script src="https://api-maps.yandex.ru/2.1/?apikey=0642ae84-6c3a-4710-b3a2-c746da9c7758&lang=ru_RU"
@@ -292,6 +352,46 @@
       });
       map.geoObjects.add(placemark);
     }
+  </script>
+
+  <!-- Sliders -->
+  <script>
+    $(document).ready(function () {
+      $('.club-carousel').slick({
+        swipe: true,
+        autoplay: true
+      });
+
+      $('.trainer-carousel').slick({
+        swipe: true,
+        autoplay: true,
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        responsive: [
+          {
+            breakpoint: 1024,
+            settings: {
+              slidesToShow: 3,
+              slidesToScroll: 1,
+            }
+          },
+          {
+            breakpoint: 780,
+            settings: {
+              slidesToShow: 2,
+              slidesToScroll: 1,
+            }
+          },
+          {
+            breakpoint: 600,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1,
+            }
+          }
+        ]
+      });
+    });
   </script>
 </body>
 
