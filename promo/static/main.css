@@ -74,6 +74,11 @@ h2 {
     color: #052e5e;
 }
 
+.location-map {
+    width: 100%;
+    height: 100%;
+}
+
 .trainer-photo {
     border-radius: 50%;
 }
