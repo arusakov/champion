@@ -28,6 +28,16 @@ h2 {
     margin-left: 1rem;
 }
 
+.navbar .container {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.navbar-info p {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
 .advantage-logo {
     display: block;
     margin-left: auto;

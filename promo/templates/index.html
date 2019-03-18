@@ -29,53 +29,33 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">
-      <img class="d-inline-block align-top logo-img" src="{% static '/images/brand.png' %}" alt="">
-    </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
-      aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarText">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="#advantages">Преимущества</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#club">О клубе</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#request">Записаться</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#location">Как добраться</a>
-        </li>
-      </ul>
+  <nav class="navbar navbar-expand-md navbar-light bg-light">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img class="d-inline-block align-top logo-img" src="{% static '/images/brand.png' %}" alt="">
+      </a>
+      <div class="justify-content-end">
+        <div class="navbar-info">
+          <p>
+            <a href="mailto:info@swimchampion.ru">
+              <span class="fa fa-envelope"></span>info@swimchampion.ru
+            </a>
+            <a href="tel:+7(499)938-59-68">+7(499)938-59-68</span>
+              <a class="fa fa-facebook" href="https://www.facebook.com/swimchampion2011"></a>
+              <a class="fa fa-instagram" href="https://www.instagram.com/sportclubchampion/"></a>
+              <a class="fa fa-vk" href="https://vk.com/swimchampion"></a>
+          </p>
+          <p>
+            Адрес: г.Москва, ул. Корнейчука, д.28, к.2
+          </p>
+        </div>
+      </div>
     </div>
-    <ul class="nav nav-info">
-      <li class="nav-item">
-        <a href="mailto:info@swimchampion.ru">
-          <span class="fa fa-envelope"></span>info@swimchampion.ru
-        </a>
-      </li>
-      <li class="nav-item">
-        <a href="tel:+7(499)938-59-68">+7(499)938-59-68</span>
-      </li>
-      <li class="nav-item">
-        <a class="fa fa-facebook" href="https://www.facebook.com/swimchampion2011"></a>
-      </li>
-      <li class="nav-item">
-        <a class="fa fa-instagram" href="https://www.instagram.com/sportclubchampion/"></a>
-      </li>
-      <li class="nav-item">
-        <a class="fa fa-vk" href="https://vk.com/swimchampion"></a>
-      </li>
-    </ul>
   </nav>
 
   <div class="block-wrapper">
     <div class="container" id="advantages">
+      <h1>Наши преимущества</h1>
       <div class="row">
         <div class="col">
           <img class="advantage-logo" src="{% static '/images/advantages/trainers.png' %}">
