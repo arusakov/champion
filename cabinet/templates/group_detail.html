@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <p>Направление: {{ object.course.name }}</p>
+    <h2>Расписание</h2>
+    <a role="button" class="btn btn-primary btn-sm " href="{% url 'lesson-create' object.id %}">Добавить</a>
+{% endblock %}

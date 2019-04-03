@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <a role="button" class="btn btn-primary btn-sm " href="{% url 'group-create' %}">Добавить</a>
+    <div class="group-list">
+        <table class="table table-striped">
+            <thead>
+                <th>Направление</th>
+                <th>Расписание</th>
+                <th></th>
+            </thead>
+            <tbody>
+                {% for group in object_list %}
+                <tr>
+                    <td>{{ group.course.name }}</td>    
+                    <td>
+                        <table class="table">
+                            <thead>
+                                <th>День недели</th>
+                                <th>Время начала</th>
+                                <th>Продолжнительность</th>
+                                <th>Место</th>
+                                <th>Тренеры</th>
+                            </thead>
+                            <tbody>
+
+                            </tbody>
+                        </table>
+                    </td>
+                    <td>
+                        <a role="button" class="btn btn-primary btn-sm " href="{% url 'group-detail' group.id %}">Редактировать</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
