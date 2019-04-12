@@ -13,11 +13,15 @@
         </thead>
         <tbody>
             {% for l in lessons %}
-            <td>{{ l.week_day }}</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <tr>
+                <td>{{ l.week_day }}</td>
+                <td>{{ l.start_time }}</td>
+                <td>{{ l.duration }}</td>
+                <td>{{ l.place.name }}</td>
+                <td>
+                    
+                </td>
+            </tr>
             {% endfor %}
         </tbody>
     </table>

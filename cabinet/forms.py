@@ -15,7 +15,7 @@ class GroupForm(forms.ModelForm):
 
 class FullNameMultipleChoiceField(forms.ModelMultipleChoiceField):
     def label_from_instance(self, obj):
-        return '{} {}'.format(obj.first_name, obj.last_name)
+        return obj.get_full_name()
 
 User = auth.get_user_model()
 class LessonForm(forms.ModelForm):
