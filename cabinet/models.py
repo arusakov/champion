@@ -11,15 +11,7 @@ class Place(models.Model):
     name = models.CharField(max_length=255)
 
 class Lesson(models.Model):
-    WEEK_DAY_CHOICES = (
-        (0, 'Monday'),
-        (1, 'Tuesday'),
-        (2, 'Wednesday'),
-        (3, 'Thursday'),
-        (4, 'Friday'),
-        (5, 'Saturday'),
-        (6, 'Sunday'),
-    )
+    WEEK_DAY_CHOICES = enumerate(('Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'))
 
     group = models.ForeignKey(Group, on_delete=models.PROTECT)
     place = models.ForeignKey(Place, on_delete=models.PROTECT)
