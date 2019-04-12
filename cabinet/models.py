@@ -15,7 +15,7 @@ class Lesson(models.Model):
 
     group = models.ForeignKey(Group, on_delete=models.PROTECT)
     place = models.ForeignKey(Place, on_delete=models.PROTECT)
-    trainer = models.ManyToManyField(User)
+    trainer = models.ManyToManyField(User, related_name='lessons')
     week_day = models.SmallIntegerField(choices=WEEK_DAY_CHOICES)
     start_time = models.TimeField()
     duration = models.DurationField()
