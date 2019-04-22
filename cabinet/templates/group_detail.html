@@ -11,6 +11,7 @@
             <th>Продолжнительность</th>
             <th>Место</th>
             <th>Тренеры</th>
+            <th></th>
         </thead>
         <tbody>
             {% for l in lessons %}
@@ -24,6 +25,9 @@
                     {% if not forloop.first %}, {% endif %}
                     {{ t|compact_fullname}}
                     {% endfor %}
+                </td>
+                <td>
+                    <a href="{% url 'lesson-delete' l.group_id l.id %}">Delete</a>
                 </td>
             </tr>
             {% endfor %}

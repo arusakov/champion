@@ -1,7 +1,7 @@
 from django.shortcuts import get_object_or_404
 from django.urls import reverse
 from django.views.generic import ListView, DetailView
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, DeleteView
 
 from cabinet import forms, models
 
@@ -40,6 +40,15 @@ class GroupLessonCreate(CreateView):
     def form_valid(self, form):
         form.instance.group = get_object_or_404(models.Group, pk=self.kwargs.get(self.pk_url_kwarg))
         return super(GroupLessonCreate, self).form_valid(form)
+
+    def get_success_url(self):
+        return reverse('group-detail', kwargs={'group_id': self.object.group_id})
+
+
+class GroupLessonDelete(DeleteView):
+    model = models.Lesson
+    template_name = 'lesson_confirm_delete.html'
+    pk_url_kwarg = 'lesson_id'
 
     def get_success_url(self):
         return reverse('group-detail', kwargs={'group_id': self.object.group_id})
