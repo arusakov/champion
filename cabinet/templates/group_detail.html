@@ -14,7 +14,7 @@
         <tbody>
             {% for l in lessons %}
             <tr>
-                <td>{{ l.week_day }}</td>
+                <td>{{ l.get_week_day_display }}</td>
                 <td>{{ l.start_time }}</td>
                 <td>{{ l.duration }}</td>
                 <td>{{ l.place.name }}</td>
