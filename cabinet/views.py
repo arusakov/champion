@@ -27,7 +27,6 @@ class GroupDetail(DetailView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        print(kwargs)
         context['lessons'] = models.Lesson.objects.filter(group=kwargs['object'])
         return context
 

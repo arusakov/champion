@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load compact_fullname %}
 
 {% block content %}
     <p>Направление: {{ object.course.name }}</p>
@@ -19,7 +20,10 @@
                 <td>{{ l.duration }}</td>
                 <td>{{ l.place.name }}</td>
                 <td>
-                    
+                    {% for t in l.trainer.all %}
+                    {% if not forloop.first %}, {% endif %}
+                    {{ t|compact_fullname}}
+                    {% endfor %}
                 </td>
             </tr>
             {% endfor %}
