@@ -18,4 +18,4 @@ class Lesson(models.Model):
     trainer = models.ManyToManyField(User)
     week_day = models.SmallIntegerField(choices=WEEK_DAY_CHOICES)
     start_time = models.TimeField()
-    duration = models.DurationField()
+    duration = models.DurationField() # end_time?

@@ -20,6 +20,15 @@ class GroupCreate(CreateView):
         return reverse('group-detail', kwargs={'pk': self.object.pk})
 
 
+class GroupDelete(DeleteView):
+    model = models.Group
+    template_name = 'group_confirm_delete.html'
+    pk_url_kwarg = 'group_id'
+
+    def get_success_url(self):
+        return reverse('group-list')
+
+
 class GroupDetail(DetailView):
     model = models.Group
     template_name = 'group_detail.html'
