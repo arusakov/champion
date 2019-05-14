@@ -19,3 +19,12 @@ class Lesson(models.Model):
     week_day = models.SmallIntegerField(choices=WEEK_DAY_CHOICES)
     start_time = models.TimeField()
     duration = models.DurationField() # end_time?
+
+class Parent(models.Model)
+    user = models.OneToOneField(User, on_delete=models.PROTECT)
+    children = models.ManyToManyField(Student)
+    phone = models.CharField(max_length=255)
+
+class Student(models.Model):
+    user = models.OneToOneField(User, on_delete=models.PROTECT)
+    group = models.ManyToManyField(Group)
