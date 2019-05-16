@@ -132,7 +132,7 @@
         <div class="col-md-6">
           {% if request.GET.success %}
           Ваша заявка принята. В ближайшее время с вами свяжутся наши специалисты.
-          Для отправки повторной заявки нажмите <a href="{% url 'index' %}#request">здесь</a>.
+          Для отправки повторной заявки нажмите <a href="{% url 'promo-index' %}#request">здесь</a>.
           {% else %}
           {% include 'request_info.html' %}
           {% endif %}

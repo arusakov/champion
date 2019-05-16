@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'promo',
+    'cabinet',
 ]
 
 MIDDLEWARE = [
@@ -124,6 +125,12 @@ STATIC_URL = '/static/'
 
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 STATIC_ROOT = os.path.join(PROJECT_ROOT, 'public', 'static')
+
+# Cabinet specific settings
+
+from django.urls import reverse_lazy
+LOGIN_URL = reverse_lazy('cabinet-login')
+LOGIN_REDIRECT_URL = reverse_lazy('cabinet-index')
 
 
 # Import local settings

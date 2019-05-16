@@ -1,4 +1,5 @@
 from django.views.generic.edit import CreateView
+from django.urls import reverse
 
 from promo.forms import RequestForm
 
@@ -6,4 +7,6 @@ from promo.forms import RequestForm
 class IndexView(CreateView):
     template_name = 'promo.html'
     form_class = RequestForm
-    success_url = '/?success=1'
+
+    def get_success_url(self, **kwargs):
+        return reverse('promo-index') + '?success=1'
