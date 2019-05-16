@@ -122,3 +122,10 @@ STATIC_URL = '/static/'
 
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 STATIC_ROOT = os.path.join(PROJECT_ROOT, 'public', 'static')
+
+
+# Import local settings
+try:
+    from local_settings import *
+except ImportError:
+    pass
