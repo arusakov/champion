@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+  {% include "pagination.html" %}
+  <div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>
+            ID
+            {% if request.GET.id == "desc" %}
+            <a href="{% url 'cabinet-request-list' %}?id=asc">
+              <span class="fa fa-sort-down"></span>
+            </a>
+            {% elif request.GET.id == "asc" %}
+            <a href="{% url 'cabinet-request-list' %}?id=desc">
+                <span class="fa fa-sort-up"></span>
+            </a>
+            {% else %}
+            <a href="{% url 'cabinet-request-list' %}?id=desc">
+              <span class="fa fa-sort"></span>
+            </a>
+            {% endif %}
+          </th>
+          <th>Время создания заявки</th>
+          <th>ФИО</th>
+          <th>Дата рождения</th>
+          <th>Номер телефона</th>
+          <th>Email</th>
+          <th>Пожелания</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for r in object_list %}
+        <tr>
+          <th>{{ r.id }}  </th>
+          <td>{{ r.created_at }}</td>
+          <td>{{ r.children_name }}</td>
+          <td>{{ r.children_birthday }}</td>
+          <td>{{ r.phone }}</td>
+          <td>{{ r.email }}</td>
+          <td>{{ r.comments }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+{% endblock %}
