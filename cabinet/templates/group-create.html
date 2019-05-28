@@ -2,5 +2,27 @@
 {% load static %}
 
 {% block content %}
-Group create
+<div class="container">
+  <form method="post" role="form" action="{% url 'cabinet-group-create' %}">
+    {% if form.non_field_errors %}
+    <div class="form-group">
+      {% for error in form.non_field_errors %}
+      <p class="help-block text-danger">{{ error }}</p>
+      {% endfor %}
+    </div>
+    {% endif %}
+    {% csrf_token %}
+    <div class="form-group">
+      <label for="course">Направление</label>
+      <select id="{{ form.course.auto_id }}" class="form-control" name="{{ form.course.name }}">
+        {% for value, text in form.course.field.choices %}
+        <option value="{{ value }}" {% if value|slugify == field.value|slugify %}selected{% endif %}>
+          {{ text }}
+        </option>
+        {% endfor %}
+      </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Создать</button>
+  </form>
+</div>
 {% endblock %}

@@ -1,3 +1,4 @@
+from django.urls import reverse_lazy
 from django.views.generic import ListView, TemplateView
 from django.views.generic.edit import FormView
 
@@ -32,3 +33,8 @@ class GroupList(ListView):
 class GroupCreate(FormView):
     template_name = 'group-create.html'
     form_class = GroupForm
+    success_url = reverse_lazy('cabinet-group-list')
+
+    def form_valid(self, form):
+        Group.objects.create(course=form.cleaned_data['course'])
+        return super(GroupCreate, self).form_valid(form)
