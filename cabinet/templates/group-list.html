@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+  <div>
+    <a role="button" class="btn btn-primary btn-sm " href="{% url 'cabinet-group-create' %}">Создать</a>
+    <table>
+      <thead>
+        <th>ID</th>
+        <th>Направление</th>
+      </thead>
+      <tbody>
+        {% for g in object_list %}
+        <tr>
+          <th>{{ g.id }}</th>
+          <td>{{ g.course }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>    
+  </div>
+{% endblock %}

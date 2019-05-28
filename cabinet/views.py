@@ -1,5 +1,8 @@
 from django.views.generic import ListView, TemplateView
+from django.views.generic.edit import FormView
 
+from cabinet.forms import GroupForm
+from cabinet.models import Group
 from promo.models import RequestInfo
 
 
@@ -19,3 +22,13 @@ class RequestList(ListView):
             return 'id'
 
         return '-id'
+
+
+class GroupList(ListView):
+    model = Group
+    template_name = 'group-list.html'
+
+
+class GroupCreate(FormView):
+    template_name = 'group-create.html'
+    form_class = GroupForm

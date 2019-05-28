@@ -9,4 +9,6 @@ urlpatterns = [
     path('login/', auth_views.LoginView.as_view(template_name='login.html'), name='cabinet-login'),
     path('logout/', auth_views.LogoutView.as_view(template_name='logout.html'), name='cabinet-logout'),
     path('request/list/', login_required(views.RequestList.as_view()), name='cabinet-request-list'),
+    path('group/list/', login_required(views.GroupList.as_view()), name='cabinet-group-list'),
+    path('group/create/', login_required(views.GroupCreate.as_view()), name='cabinet-group-create'),
 ]
