@@ -3,26 +3,139 @@
 
 {% block content %}
 <div class="container">
-  <form method="post" role="form" action="{% url 'cabinet-group-create' %}">
-    {% if form.non_field_errors %}
-    <div class="form-group">
-      {% for error in form.non_field_errors %}
-      <p class="help-block text-danger">{{ error }}</p>
-      {% endfor %}
+    <form method="post" role="form" action="{% url 'cabinet-group-create' %}">
+        {% if form.non_field_errors %}
+        <div class="form-group">
+            {% for error in form.non_field_errors %}
+            <p class="help-block text-danger">{{ error }}</p>
+            {% endfor %}
+        </div>
+        {% endif %}
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="course">Направление</label>
+            <select id="{{ form.course.auto_id }}" class="form-control" name="{{ form.course.name }}">
+                {% for value, text in form.course.field.choices %}
+                <option value="{{ value }}" {% if value|slugify == field.value|slugify %}selected{% endif %}>
+                    {{ text }}
+                </option>
+                {% endfor %}
+            </select>
+            {% for error in form.course.errors %}
+            <span class="help-block text-danger">{{ error }}</span>
+            {% endfor %}
+        </div>
+        <div class="form-group">
+            <label class="control-label">Расписание</label>
+            {% for error in form.schedule.errors %}
+            <span class="help-block">{{ error }}</span>
+            {% endfor %}
+            <input type="hidden" name="schedule">
+            <button type="button" class="btn btn-link" title="Добавить" data-toggle="modal"
+                data-target="#schedule-modal">
+                <span class="fa fa-plus-circle"></span>
+            </button>
+            <table id="schedule-table" class="table table-striped">
+                <thead>
+                    <th>День недели</th>
+                    <th>Время начала</th>
+                    <th>Время окончания</th>
+                    <th>Место</th>
+                    <th>Тренер</th>
+                    <th></th>
+                </thead>
+                <tbody>
+                    <tr></tr>
+                </tbody>
+            </table>
+        </div>
+        <button type="submit" class="btn btn-primary">Создать</button>
+    </form>
+    <div class="modal fade" id="schedule-modal" tabindex="-1" role="dialog" aria-labelledby="schedule-modal-label"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="schedule-modal-label">Расписание</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="week-day" class="control-label">День недели</label>
+                            <select class="form-control" name="week-day">
+                                {% for key, name in week_days %}
+                                <option value="{{ key }}">{{ name }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Отмена</button>
+                    <button type="button" class="btn btn-primary" id="schedule-create-button">Добавить</button>
+                </div>
+            </div>
+        </div>
     </div>
-    {% endif %}
-    {% csrf_token %}
-    <div class="form-group">
-      <label for="course">Направление</label>
-      <select id="{{ form.course.auto_id }}" class="form-control" name="{{ form.course.name }}">
-        {% for value, text in form.course.field.choices %}
-        <option value="{{ value }}" {% if value|slugify == field.value|slugify %}selected{% endif %}>
-          {{ text }}
-        </option>
-        {% endfor %}
-      </select>
-    </div>
-    <button type="submit" class="btn btn-primary">Создать</button>
-  </form>
 </div>
+{% endblock %}
+
+{% block js-libs %}
+<script>
+    var schedules = [];
+    var lastScheduleId = 0;
+
+    function scheduleIndexOf(id) {
+        for (var i = 0; i < schedules.length; i++) {
+            if (schedules[i]["scheduleId"] === id) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    function syncSchedule() {
+        var schedule = ''
+        for (var i = 0; i < schedules.length; i++) {
+            if (i > 0) {
+                schedule += ','
+            }
+            schedule += schedules[i].weekDayId
+        }
+        $('input[name=schedule]').val(schedule);
+    }
+
+    $('#schedule-create-button').on('click', function (event) {
+        var id = lastScheduleId++
+
+        var weekDay = $('select[name=week-day] option:selected')
+        $('#schedule-table').append(
+            '<tr id="schedule-row-' + id + '">' +
+            '<td data-week-day="' + weekDay.val() + '">' + weekDay.text() + '</td>' +
+            '<td></td>' +
+            '<td></td>' +
+            '<td></td>' +
+            '<td></td>' +
+            '<td><a id="remove-schedule-' + id + '"><span class="fa fa-trash"></span></a></td>' +
+            '</tr>'
+        )
+
+        schedules.push({
+            scheduleId: id,
+            weekDayId: weekDay.val(),
+        });
+        syncSchedule();
+
+        $('#remove-schedule-' + id).on('click', function (event) {
+            $('#schedule-row-' + id).remove();
+            schedules.splice(scheduleIndexOf(id), 1)
+            syncSchedule();
+        })
+
+        $('#schedule-modal').modal('hide')
+    })
+</script>
 {% endblock %}
